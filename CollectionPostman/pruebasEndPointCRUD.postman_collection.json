@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "5b10e6a7-76d9-41b3-8194-6e5e253d8ab9",
+		"name": "pruebasEndPointCRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9009180",
+		"_collection_link": "https://gold-equinox-786024.postman.co/workspace/New-Team-Workspace~ecb2eb6b-1407-483f-aa93-13ed9720cdd1/collection/9009180-5b10e6a7-76d9-41b3-8194-6e5e253d8ab9?action=share&source=collection_link&creator=9009180"
+	},
+	"item": [
+		{
+			"name": "ObtenerTodos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9095/api/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9095",
+					"path": [
+						"api",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerPorID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9095/api/buscar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9095",
+					"path": [
+						"api",
+						"buscar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ElimnarPorID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9095/api/eliminar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9095",
+					"path": [
+						"api",
+						"eliminar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearUsuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Nombre Apellido\",\r\n    \"email\": \"prueba@mail2.com\",\r\n    \"password\":\"Clav1234\",\r\n    \"phones\":[\r\n        {\r\n            \"number\":\"123456789\",\r\n            \"citycode\":\"56\",\r\n            \"countrycode\":\"9\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9095/api/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9095",
+					"path": [
+						"api",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizarUsuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Nombre Apellido Aple\",\r\n    \"email\": \"prueba@mail2.com\",\r\n    \"password\":\"Clav1234\",\r\n    \"phones\":[\r\n        {\r\n            \"number\":\"123456789\",\r\n            \"citycode\":\"56\",\r\n            \"countrycode\":\"9\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9095/api/actualizar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9095",
+					"path": [
+						"api",
+						"actualizar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
