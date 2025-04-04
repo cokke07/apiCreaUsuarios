@@ -114,7 +114,7 @@ public class UsuarioRestController {
         try{
             usuarioService.eliminarUsuario(id);
             return new ResponseEntity<String>(Constantes.MENSAJE_ELIMINAR,HttpStatus.OK);
-        } catch (RuntimeException | ApiError ex) {
+        } catch (RuntimeException ex) {
             throw new ApiError("Error interno", HttpStatus.INTERNAL_SERVER_ERROR);
         }
 

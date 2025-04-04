@@ -99,6 +99,10 @@ public class UsuarioServiceImpl implements UsuarioService{
         UsuarioCreatedDTO usuarioCreatedDTO = new UsuarioCreatedDTO();
         LocalDateTime now = LocalDateTime.now();
         try {
+            if (usuarioRepository.findByEmail(u.getEmail()).isPresent()) {
+                log.error("[ERR][crearUsuario] El correo ya está registrado: " + u.getEmail());
+                throw new ApiError("El correo ya está registrado", HttpStatus.BAD_REQUEST);
+            }
             if (!u.getEmail().matches(regexEmail)) {
                 log.error("[ERR][crearUsuario] El correo no tiene el formato correcto : " + u.getEmail());
                 throw new ApiError("El correo no tiene el formato correcto", HttpStatus.BAD_REQUEST);
@@ -143,6 +147,7 @@ public class UsuarioServiceImpl implements UsuarioService{
         LocalDateTime now = LocalDateTime.now();
         try {
                 Usuario usuarioEncontrado = usuarioRepository.findById(id).orElseThrow();
+
                 if(usuarioEncontrado == null){
                     log.error("[ERR][editarUsuario] El usuario no existe o id no encontrado : " + u.getEmail());
                     throw new ApiError("El usuario no existe o id no encontrado ", HttpStatus.NOT_FOUND);

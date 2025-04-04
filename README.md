@@ -21,7 +21,7 @@ _Para poner en marcha el proyecto, se requiere ir al repositorio y descargarlo e
 se muestra en el ejemplo a continuación:_
 
 ```
-git clone https://github.com/cokke07/CrudJava.git
+git clone https://github.com/cokke07/apiCreaUsuarios
 ```
 _Despúes se debe abrir en el IDE para que se realice la descarga automatica de dependencias_
 ### Instalación 🔧
